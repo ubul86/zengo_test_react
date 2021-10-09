@@ -13,21 +13,21 @@ class App extends Component {
         return (
                 <div className="App"> 
                     <ToastContainer />
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xs-12">
                                 <h1>Cities and Counties React example</h1>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-5">    
-                                <section class="left">
+                        <div className="row">
+                            <div className="col-md-5">    
+                                <section className="left">
                                     <County />               
                                     <NewCity />  
                                 </section>
                             </div>
-                            <div class="col-md-7">                
-                                <section class="right">
+                            <div className="col-md-7">                
+                                <section className="right">
                                     <Cities />   
                                 </section>
                             </div>
