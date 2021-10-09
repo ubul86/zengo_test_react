@@ -62,7 +62,7 @@ class City extends Component {
     }
 
     render() {
-        const {selectedCounty, selectedCity, cityProp} = this.props;        
+        const {selectedCity, cityProp} = this.props;        
         let city = <div onClick={() => this.selectCity(cityProp)}>{cityProp.name}</div>
         if (selectedCity !== 0 && selectedCity === cityProp.id) {
             city = (
@@ -88,8 +88,7 @@ class City extends Component {
 }
 
 const mapStateToProps = state => {
-    return {
-        selectedCounty: state.county.selectedCounty,
+    return {        
         selectedCity: state.city.selectedCity,
     }
 };

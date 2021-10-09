@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { connect } from 'react-redux';
-import {DEFAULT_OPTIONS} from '../constants/toastr';
 import * as actionTypes from '../store/actions';
 import CityService from "../services/city.service.js";
 import City from "./City";
@@ -20,7 +18,7 @@ class Cities extends Component {
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.selectedCounty !== this.props.selectedCounty && this.props.selectedCounty > 0) {            
             const selectedCounty=this.props.selectedCounty;            
-            const county = this.props.counties.filter(result => parseInt(result.id) == parseInt(selectedCounty));   
+            const county = this.props.counties.filter(result => parseInt(result.id) === parseInt(selectedCounty));   
             this.setState({
                     county: county[0]
                 })
@@ -36,7 +34,7 @@ class Cities extends Component {
     }
 
     render() {
-        const {selectedCounty, cities, selectedCity} = this.props;
+        const {selectedCounty, cities} = this.props;
         const {county} = this.state;        
         const cityUl = cities.map((value, index) =>
             <li key={value.id}>
