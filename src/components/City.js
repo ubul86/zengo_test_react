@@ -26,16 +26,7 @@ class City extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevProps.selectedCounty !== this.props.selectedCounty && this.props.selectedCounty > 0) {
-            CityService.getCities(this.props.selectedCounty).then(
-                    response => {
-                        this.props.onLoadCities(response.data.results);
-                    },
-                    error => {
-
-                    }
-            );
-        }
+        
     }
 
     selectCity(city) {
@@ -86,9 +77,9 @@ class City extends Component {
                                    onChange={this.onChangeInput}/>
                         </div>
                         <div>
-                            <a href="javascript:void(0)" onClick={() => this.modifyCity(cityProp)}>Mentés</a>
-                            <a href="javascript:void(0)" onClick={() => this.deleteCity(cityProp)}>Törlés</a>
-                            <a href="javascript:void(0)" onClick={() => this.unSelectCity()}>Mégsem</a>
+                            <a href="javascript:;" onClick={() => this.modifyCity(cityProp)}>Mentés</a>
+                            <a href="javascript:;" onClick={() => this.deleteCity(cityProp)}>Törlés</a>
+                            <a href="javascript:;" onClick={() => this.unSelectCity()}>Mégsem</a>
                         </div>
                     </div>
                     )

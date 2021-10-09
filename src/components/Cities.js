@@ -10,12 +10,20 @@ import City from "./City";
 class Cities extends Component {
 
     constructor(props) {
-        super(props);        
+        super(props);  
+        this.state={
+            county:null
+        }
     }
 
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevProps.selectedCounty !== this.props.selectedCounty && this.props.selectedCounty > 0) {
+        if (prevProps.selectedCounty !== this.props.selectedCounty && this.props.selectedCounty > 0) {            
+            const selectedCounty=this.props.selectedCounty;            
+            const county = this.props.counties.filter(result => parseInt(result.id) == parseInt(selectedCounty));   
+            this.setState({
+                    county: county[0]
+                })
             CityService.getCities(this.props.selectedCounty).then(
                     response => {
                         this.props.onLoadCities(response.data.results);
@@ -29,7 +37,7 @@ class Cities extends Component {
 
     render() {
         const {selectedCounty, cities, selectedCity} = this.props;
-        
+        const {county} = this.state;        
         const cityUl = cities.map((value, index) =>
             <li key={value.id}>
                 <City cityProp={value} />                
@@ -42,10 +50,17 @@ class Cities extends Component {
         else if(selectedCounty>0){            
             list="No cities in this county"
         }
+        
+        let countyName=null;        
+        if(county!==null){
+            console.log(county.name)
+            countyName=(<h5>County name: {county.name}</h5>);
+        }
+        
         return (
                 <div> 
                     <h4 className="text-left font-weight-bold">Cities</h4>
-                    <div></div>
+                    {countyName}
                     <div>{list}</div>
                 </div>
 
@@ -57,7 +72,8 @@ const mapStateToProps = state => {
     return {
         selectedCounty: state.county.selectedCounty,
         selectedCity: state.city.selectedCity,
-        cities: state.city.cities
+        cities: state.city.cities,
+        counties: state.county.counties
     }
 };
 

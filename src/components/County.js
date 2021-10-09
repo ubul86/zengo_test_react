@@ -38,8 +38,8 @@ class County extends Component {
                     <div className="form-group">
                         <select className="form-control" value={this.state.selectedValue} onChange={this.handleChange}>
                             <option value="0" disabled hidden>Select Country</option>
-                            {counties.map(fbb =>
-                                        <option key={fbb.id} value={fbb.id}>{fbb.name}</option>
+                            {counties.map((value,index) =>
+                                        <option key={value.id} value={value.id}>{value.name}</option>
                                         )};
                         </select>
                     </div>

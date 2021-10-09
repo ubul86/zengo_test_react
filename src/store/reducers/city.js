@@ -18,8 +18,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 selectedCity: state.selectedCity = action.city
             }
-        case actionTypes.DELETE_CITY:
-            console.log(action.id);
+        case actionTypes.DELETE_CITY:            
             const updatedArray = state.cities.filter(result => result.id !== action.id);            
             return {
                 ...state,
