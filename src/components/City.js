@@ -66,7 +66,7 @@ class City extends Component {
         let city = <div onClick={() => this.selectCity(cityProp)}>{cityProp.name}</div>
         if (selectedCity !== 0 && selectedCity === cityProp.id) {
             city = (
-                    <div>
+                    <div className="active">
                         <div>
                             <input type="text" value={this.state.inputValue} className="form-control"
                                    name="inputValue"                                            

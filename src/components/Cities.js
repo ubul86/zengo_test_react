@@ -61,7 +61,7 @@ class Cities extends Component {
                 <div> 
                     <h4 className="text-left font-weight-bold">Cities</h4>
                     {countyName}
-                    <div>{list}</div>
+                    {list}
                 </div>
 
                 )
