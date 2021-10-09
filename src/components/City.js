@@ -25,10 +25,6 @@ class City extends Component {
         });
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        
-    }
-
     selectCity(city) {
         this.props.onSelectCity(city.id)
         this.setState({
