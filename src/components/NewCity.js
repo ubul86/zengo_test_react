@@ -42,31 +42,29 @@ class NewCity extends Component {
 
     render() {
         const {selectedCounty} = this.props;
-        let inputValue = "";
+        const {inputValue} = this.state;
+        let element = "";
 
         if (selectedCounty > 0) {
-            inputValue =
+            element =
                     (<div>
                         <div>
                             <h4 className="text-left font-weight-bold">Create New City</h4>
                         </div>
                         <div className="form-group">
-                            <input type="text" value={this.state.inputValue} className="form-control"
+                            <input type="text" value={inputValue} className="form-control"
                                    name="inputValue"                                            
                                    onChange={this.onChangeInput}/>
                         </div>
                         <div className="form-group">
-                            <button className="btn btn-block btn-success" onClick={this.onInputSave}>Mentés</button>
+                            <button disabled={!inputValue} className="btn btn-block btn-success" onClick={this.onInputSave}>Mentés</button>
                         </div>
                     </div>) 
-
         }
-
-
-
+        
         return (
                 <div>                    
-                    {inputValue}
+                    {element}
                 </div>
 
                 )
