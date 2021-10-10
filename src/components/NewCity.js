@@ -57,7 +57,7 @@ class NewCity extends Component {
                                    onChange={this.onChangeInput}/>
                         </div>
                         <div className="form-group">
-                            <button disabled={!inputValue} className="btn btn-block btn-success" onClick={this.onInputSave}>Mentés</button>
+                            <button disabled={!inputValue} className="btn btn-block btn-success" onClick={this.onInputSave}>Save</button>
                         </div>
                     </div>) 
         }
