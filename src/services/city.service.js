@@ -21,4 +21,4 @@ class CityService {
 
 }
 
-export default new CityService;
+export default new CityService();

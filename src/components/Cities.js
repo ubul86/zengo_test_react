@@ -50,8 +50,7 @@ class Cities extends Component {
         }
         
         let countyName=null;        
-        if(county!==null){
-            console.log(county.name)
+        if(county!==null){            
             countyName=(<h5>County name: {county.name}</h5>);
         }
         

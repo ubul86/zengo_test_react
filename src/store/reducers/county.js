@@ -7,18 +7,21 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.LOAD_COUNTIES:            
+        case actionTypes.LOAD_COUNTIES:
             return {
                 ...state,
-                counties: state.counties.concat(action.counties)                
+                counties: state.counties.concat(action.counties)
             }
         case actionTypes.SELECT_COUNTY:
-            return {                
+            return {
                 ...state,
-                selectedCounty: state.selectedCounty=action.county
+                selectedCounty: state.selectedCounty = action.county
             }
-    }
-    return state;
+        default:
+            return {
+                ...state
+            }
+    }    
 };
 
 export default reducer;

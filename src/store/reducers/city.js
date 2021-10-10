@@ -18,28 +18,31 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 selectedCity: state.selectedCity = action.city
             }
-        case actionTypes.DELETE_CITY:            
-            const updatedArray = state.cities.filter(result => result.id !== action.id);            
+        case actionTypes.DELETE_CITY:
+            const updatedArray = state.cities.filter(result => result.id !== action.id);
             return {
                 ...state,
                 cities: updatedArray,
                 selectedCity: 0
             }
-        case actionTypes.MODIFY_CITY:           
-            const updatedIndex=state.cities.findIndex(x => x.id === action.id);
-            state.cities[updatedIndex].name=action.newValue;
+        case actionTypes.MODIFY_CITY:
+            const updatedIndex = state.cities.findIndex(x => x.id === action.id);
+            state.cities[updatedIndex].name = action.newValue;
             return {
                 ...state,
                 cities: state.cities,
                 selectedCity: 0
             }
-        case actionTypes.NEW_CITY:                  
+        case actionTypes.NEW_CITY:
             return {
                 ...state,
                 cities: state.cities.concat(action.city)
             }
-    }
-    return state;
+        default:
+            return {
+                ...state,
+            }
+    }    
 };
 
 export default reducer;
