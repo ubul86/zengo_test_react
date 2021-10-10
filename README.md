@@ -1,4 +1,18 @@
+# React + Redux Zengo Test project
+
 If you want to run the project without error, you need to run first the Zengo Test project: https://bitbucket.org/ubul86/zengo_test/src/master/ and configure the {project_root}/constants/main.js file to reach the API endpoints.
+
+## To Install:
+```
+npm install
+```
+
+## To Try/Run the project:
+
+```
+npm start
+```
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
