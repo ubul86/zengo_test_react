@@ -73,9 +73,9 @@ class City extends Component {
                                    onChange={this.onChangeInput}/>
                         </div>
                         <div>
-                            <a href="javascript:;" onClick={() => this.modifyCity(cityProp)}>Mentés</a>
-                            <a href="javascript:;" onClick={() => this.deleteCity(cityProp)}>Törlés</a>
-                            <a href="javascript:;" onClick={() => this.unSelectCity()}>Mégsem</a>
+                            <a href={void(0)} onClick={() => this.modifyCity(cityProp)}>Save</a>
+                            <a href={void(0)} onClick={() => this.deleteCity(cityProp)}>Delete</a>
+                            <a href={void(0)} onClick={() => this.unSelectCity()}>Cancel</a>
                         </div>
                     </div>
                     )
